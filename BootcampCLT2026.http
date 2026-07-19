@@ -1,0 +1,6 @@
+@BootcampCLT2026_HostAddress = http://localhost:5260
+
+GET {{BootcampCLT2026_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
