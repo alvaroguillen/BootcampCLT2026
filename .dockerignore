@@ -6,3 +6,5 @@
 *.user
 Dockerfile
 .dockerignore
+K8s/
+helm/

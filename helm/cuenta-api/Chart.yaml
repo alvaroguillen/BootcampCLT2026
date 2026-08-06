@@ -1,0 +1,6 @@
+apiVersion: v2
+name: api-cuenta
+description: Helm chart para desplegar la API de cuentas (BootcampCLT2026)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
