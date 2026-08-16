@@ -65,7 +65,14 @@ jobs:
       - name: Verify Minikube context
         shell: powershell
         run: |
-          minikube status
+          $hostStatus = (minikube status --format='{{.Host}}' 2>$null)
+          if ($hostStatus -ne "Running") {
+            Write-Host "Minikube host no está corriendo, iniciando..."
+            minikube start
+          } else {
+            Write-Host "Minikube host ya está corriendo."
+          }
+          minikube update-context
           kubectl config use-context minikube
           kubectl cluster-info
       - name: Deploy PostgreSQL and Seq
